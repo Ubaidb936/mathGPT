@@ -1,6 +1,6 @@
 # Flow for the TaleCrafter Chatbot
 
-![Cute kitten](https://github.com/Ubaidb936/TaleCrafter/blob/main/story_developing_pipeline.png)
+![Cute kitten](https://github.com/Ubaidb936/mathGPT/blob/main/arch.png)
 
 
 # Agent 1
