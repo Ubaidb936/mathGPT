@@ -1,0 +1,5 @@
+pandas
+inspect-ai
+openai
+langchain
+langchain_openai
