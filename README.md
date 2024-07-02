@@ -14,7 +14,8 @@
 7. run `inspect eval student_llm.py --model openai/gpt-4`. Uses Inspect AI solver(only generate() used) to solve the questions and JSON file is stored in the logs file.
 8. run `python grader_llm.py`. this commands grades the student llm answers and stores a scores.csv file in logs folder.
    
-### Graded sample: Give a link to huggingace
+### Graded sample:
+[link text](https://huggingface.co/datasets/Ubaidbhat/evaluations?row=1)
 
 
 ### Improvements:
