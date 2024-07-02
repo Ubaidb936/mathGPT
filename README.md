@@ -19,5 +19,5 @@
 
 
 ### Improvements:
-1. Use change of thought to evaluate the approach of the student LLM as well.
+1. Use chain of thought to evaluate the approach of the student LLM as well.
 2. Include other math problems as well.
