@@ -27,7 +27,6 @@ if len(json_files) > 0:
     json_file_path = os.path.join(log_folder_path, json_file)    
     with open(json_file_path, 'r') as f:
         data = json.load(f)
-    # os.remove(json_file_path)
 else:
     raise ValueError("Please call the student_llm first")  
 
@@ -36,29 +35,29 @@ else:
 student_llm_results = data["samples"]
 
 
-
 GRADE_LLM_PROMPT = """
-###Task Description:
-An instruction (which includes a mathematical problem involving addition, subtraction, multiplication, or division of two numbers), a response to evaluate, a reference answer, and a score rubric representing the evaluation criteria are given.
-1. Write a detailed feedback that assesses the quality of the response strictly based on the given score rubric and mathematical knowledge, not evaluating in general.
-2. After writing a feedback, write either "Correct" or "Incorrect" based on the score rubric.
-3. The output format should look as follows: "Feedback: {{write a feedback for criteria}} [RESULT] {{Correct/Incorrect}}"
-4. Please do not generate any other opening, closing, and explanations. Be sure to include [RESULT] in your output.
+### Task Description:
+Given a mathematical problem (involving addition, subtraction, multiplication, or division of two numbers), a response to evaluate, a reference answer, and a scoring rubric:
 
-###The instruction to evaluate:
+1. Write detailed feedback assessing the quality of the response based on the given scoring rubric and mathematical knowledge.
+2. Determine if the response is "Correct" or "Incorrect" based on the scoring rubric.
+3. The output format should be: "Feedback: {{write a feedback for criteria}} [RESULT] {{Correct/Incorrect}}"
+4. Include "[RESULT]" in your output without any additional opening, closing, or explanations.
+
+### The instruction to evaluate:
 {instruction}
 
-###Response to evaluate:
+### Response to evaluate:
 {response}
 
-###Reference Answer:
+### Reference Answer:
 {reference_answer}
 
-###Score Rubrics:
+### Scoring Rubric:
 [Is the response correct, accurate, and factual based on the reference answer and mathematical knowledge?]
 Score: The response is either "Correct" or "Incorrect".
 
-###Feedback:
+### Feedback:
 """
 grade_llm_prompt_template = ChatPromptTemplate.from_messages(
     [
@@ -67,9 +66,6 @@ grade_llm_prompt_template = ChatPromptTemplate.from_messages(
     ]
 )
 grade_llm = ChatOpenAI(model="gpt-4-turbo", temperature=0)
-
-
-
 
 
 
