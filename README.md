@@ -1,4 +1,4 @@
-# Flow for the TaleCrafter Chatbot
+# Math Evaluations
 
 ![Cute kitten](https://github.com/Ubaidb936/mathGPT/blob/main/arch.png)
 
